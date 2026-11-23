@@ -28,6 +28,7 @@ package com.mycompany.quickchatprogram;
  * 
  * @author Amahle Lisah Khumalo
  */
+
 public class Login {
      
     //Declare variables to store user information
@@ -37,10 +38,7 @@ public class Login {
     String firstName; //User's first name
     String lastName; //User's last name
  
-    //------------------------------------------------------------------------------------------------------
-    // CONSTRUCTOR
-    //------------------------------------------------------------------------------------------------------
-    
+    // CONSTRUCTOR    
     // Constructs a login object and assigns the details provided by the user
     public Login(String username, String password, String cellphoneNumber, String firstName, String lastName) {
         
@@ -62,14 +60,12 @@ public class Login {
     */
     
     // VALIDATION METHODS
-    // Validates the username requirements 
-    // Returns true if valid, false otherwise
+    // Validates the username requirements and returns true if valid, false otherwise
     public boolean checkUserName() {
         return username.contains("_") && username.length() <= 5;
     } 
     
-    //Checks that the password meets all complexity requirements 
-    //Return true if valid, false otherwise 
+    //Checks that the password meets all complexity requirements and return true if valid, false otherwise 
     public boolean checkPasswordComplexity() {
         
         //Immediately returns false if the password is shorter than 8 characters
@@ -103,7 +99,7 @@ public class Login {
         }
     }
         
-        //All three flags must be tru for the password to pass
+        // All three flags must be true for the password to pass
         return hasCapital && hasNumber && hasSpecial; 
     } 
      
@@ -121,10 +117,7 @@ public class Login {
             return cellphoneNumber.matches(regex);
     }
     
-    //-------------------------------------------------------------------------------------------------------
     //REGISTRATION METHOD 
-    //-------------------------------------------------------------------------------------------------------
-    
     //Registers the user and returns the appropriate status message
     public String registerUser() {
         //String builder is used to build the result line by line
@@ -138,7 +131,7 @@ public class Login {
                     + "username contains an underscore and is no more than five characters in length.\n");
         }
 
-         //Check passoword and append the appropriate message
+         //Check passoword 
         if (checkPasswordComplexity()) {
             result.append("Password successfully captured.\n");
         } else {
@@ -146,28 +139,25 @@ public class Login {
                     + "contains at least eight characters, a capital letter, a number, and a special character.\n");
         }
 
-        //Check cellphone number and append the appropriate message
+        //Check cellphone number 
         if (checkCellPhoneNumber()) {
             result.append("Cell phone number successfully added.\n");
         } else {
             result.append("Cell phone number incorrectly formatted or does not contain international code.\n");
         }
 
-        //Returns the full registration ststus
+        //Returns the full registration status
         return result.toString(); 
     }
     
-    //------------------------------------------------------------------------------------------------------
     //LOGIN METHODS
-    //------------------------------------------------------------------------------------------------------
-    
-    //loginUser Method that checks if enetered credentials match stored credentials 
-    //Returns true if they match, false otherwise
+    // This method that checks if entered credentials match stored credentials 
+    // Returns true if they match, false otherwise
     public boolean loginUser(String enteredUsername, String enteredPassword) {
         return this.username.equals(enteredUsername) && this.password.equals(enteredPassword);
     }
     
-    //returnLoginStatus method that returns the appropriate login message if login was successful
+    // This method that returns the appropriate login message if login was successful
     public String returnLoginStatus(String enteredUsername, String enteredPassword) {
         if (loginUser(enteredUsername, enteredPassword)) {
             return "Welcome "  + firstName + " " + lastName + ", it is great to see you.";
