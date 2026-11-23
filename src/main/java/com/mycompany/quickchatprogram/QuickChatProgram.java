@@ -45,13 +45,11 @@
  */
 
 package com.mycompany.quickchatprogram;
-
 import java.util.Scanner;
 
 /**
- * PROGPART1 is the main class and entry point for the QuickChat application.
+ * This is the main class and entry point for the QuickChat application.
  * It handles login and messaging functionality.
- * Registration is handled by the Registration class.
  * @author Amahle Lisah Khumalo
  */
 
@@ -63,12 +61,10 @@ public class QuickChatProgram { // Beginning of main class
 
         // Welcome message displayed when the application starts
         System.out.println("=== Welcome to QuickChat ===");
-        System.out.println("============================\n");
+        System.out.println("-----------------------------\n");
 
-        // -----------------------------------------------------------------------
         // REGISTRATION SECTION
         // Handled by the Registration class
-        // -----------------------------------------------------------------------
         System.out.println("** Registration **\n");
 
         // Collect first and last name here before passing to Registration
@@ -85,9 +81,7 @@ public class QuickChatProgram { // Beginning of main class
         // Returns a fully validated Login object once all fields pass
         Login newUser = registration.registerUser(scanner);
 
-        // -----------------------------------------------------------------------
         // LOGIN SECTION
-        // -----------------------------------------------------------------------
         System.out.println("----------------------------");
         System.out.println("** Login **\n");
 
@@ -119,10 +113,8 @@ public class QuickChatProgram { // Beginning of main class
             }
         }
 
-        // -----------------------------------------------------------------------
         // MESSAGING SECTION
         // Only runs after successful login
-        // -----------------------------------------------------------------------
         System.out.println("\nWelcome to QuickChat.");
         System.out.println("---------------------------\n");
 
@@ -140,10 +132,8 @@ public class QuickChatProgram { // Beginning of main class
         Message[] allMessages = new Message[50];
         int allMessagesCount = 0;
 
-        // -----------------------------------------------------------------------
         // MAIN MENU LOOP
         // Keeps running until the user selects Quit
-        // -----------------------------------------------------------------------
         boolean running = true;
 
         while (running) {
@@ -170,10 +160,8 @@ public class QuickChatProgram { // Beginning of main class
             switch (menuChoice) {
 
                 case 1:
-                    // -----------------------------------------------------------------------
+                    
                     // SEND MESSAGES
-                    // -----------------------------------------------------------------------
-
                     // Ask how many messages only the FIRST time option 1 is selected
                     if (!messageLimitSet) {
                         System.out.print("How many messages would you like to send? ");
@@ -290,10 +278,7 @@ public class QuickChatProgram { // Beginning of main class
                    break;
 
                 case 3: 
-                    // -----------------------------------------------------------------------
                     // STORED MESSAGES SUB-MENU
-                    // -----------------------------------------------------------------------
-
                     if (allMessagesCount == 0) {
                         System.out.println("No messages available yet. Please send some messages first.");
                         break;
@@ -377,7 +362,7 @@ public class QuickChatProgram { // Beginning of main class
                     break;
 
                 case 4:
-                    // Quit the application
+                    // Quit/Exit the application
                     System.out.println("Thank You for Using QuickChat!");
                     running = false;
                     break;

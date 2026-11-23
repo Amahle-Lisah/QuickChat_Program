@@ -39,6 +39,10 @@
  */
 
 package com.mycompany.quickchatprogram;
+import org.json.simple.JSONObject;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
 
 /**
  * The Message class handles all messaging functionality for the QuickChat
@@ -181,10 +185,7 @@ public class Message {
         }
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // MESSAGE HASH METHOD
-    // --------------------------------------------------------------------------------------------------------
-
     // Creates and returns the Message Hash using String manipulation    
     public String createMessageHash() {
         String firstTwoID = messageID.substring(0, 2);
@@ -223,10 +224,7 @@ public class Message {
         return messageHash;
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // SEND MESSAGE METHOD
-    // --------------------------------------------------------------------------------------------------------
-
     /*
      * CODE ATTRIBUTION
      * Title: Switch Statement in Java
@@ -263,7 +261,7 @@ public class Message {
             return "Press 0 to delete the message";
 
         case 3:
-            // User chose to store - add to display string and stored array
+            // User chose to store 
             allSentMessages = allSentMessages
                     + "\n--- Message " + (totalMessagesSent + 1) + " ---"
                     + "\nMessage ID: " + messageID
@@ -282,10 +280,7 @@ public class Message {
             return "Invalid option. Please input a valid number";
     }
 }
-    // --------------------------------------------------------------------------------------------------------
     // PRINT MESSAGES METHOD
-    // --------------------------------------------------------------------------------------------------------
-
     // Returns all messages sent during the current session in order: Message ID, Message Hash, Recipient, Message
     public String printMessages() {
         if (allSentMessages.equals("")) {
@@ -294,18 +289,13 @@ public class Message {
         return "\n=== All Sent Messages ===" + allSentMessages;
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // TOTAL MESSAGES METHOD
-    // --------------------------------------------------------------------------------------------------------
-
     // Returns the total number of messages sent this session
     public int returnTotalMessages() {
         return totalMessagesSent;
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // STORE MESSAGE METHOD (JSON)
-    // --------------------------------------------------------------------------------------------------------
 
     /*
      * CODE ATTRIBUTION
@@ -519,6 +509,12 @@ public class Message {
     // Returns the current stored count
     public static int getStoredCount() {
         return storedCount;
+    }
+
+    private static class JSONObject {
+
+        public JSONObject() {
+        }
     }
 } // end of class
    

@@ -30,9 +30,13 @@ package com.mycompany.quickchatprogram;
 import java.util.Scanner;
 
 /**
+ * The Registration class is responsible for collecting and validating user details during the registration process.
+ * It collects the user's first name, last name, username, password, and cell phone number, validating each field using the Login class.
+ * Once all fields are validated, it returns a Login object containing the registered user's details for use in the main application.
  *
  * @author Amahle Lisah Khumalo
  */
+
 public class Registration {
     
 
