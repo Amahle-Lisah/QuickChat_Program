@@ -56,19 +56,13 @@ package com.mycompany.quickchatprogram;
  */
 
 public class Message {
-    // ---------------------------------------------------------------------------------------------------------
+    
     // INSTANCE VARIABLES
-    // ---------------------------------------------------------------------------------------------------------
     private String messageID;       // Randomly generated 10 digit message ID
     private String recipient;       // Recipient cell phone number
     private String messageText;     // The actual message content
     private String messageHash;     // Auto generated hash for the message
     private int messageNumber;      // The number of this message in the session
-
-    // --------------------------------------------------------------------------------------------------------
-    // CLASS-LEVEL (STATIC) VARIABLES
-    // Shared across all Message objects to track the session totals
-    // --------------------------------------------------------------------------------------------------------
 
     // Stores all sent message details as one concatenated String (Part 2)
     private static String allSentMessages = "";
@@ -76,10 +70,8 @@ public class Message {
     // Tracks the total number of messages sent this session
     private static int totalMessagesSent = 0;
 
-    // --------------------------------------------------------------------------------------------------------
-    // PART 3 - ARRAYS
-    // Five arrays to store message data populated as the user interacts with the app
-    // --------------------------------------------------------------------------------------------------------
+    // ARRAYS
+    // Five arrays to store message data populated as the user interacts with the program
 
     // Array to store all sent message texts
     private static String[] sentMessagesArray = new String[50];
@@ -103,10 +95,7 @@ public class Message {
     private static int hashCount = 0;
     private static int idCount = 0;
 
-    // --------------------------------------------------------------------------------------------------------
     // CONSTRUCTOR
-    // --------------------------------------------------------------------------------------------------------
-
     /*
      * CODE ATTRIBUTION
      * Title: Java Constructors
@@ -122,10 +111,7 @@ public class Message {
         this.messageID = generateMessageID();
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // MESSAGE ID METHODS
-    // --------------------------------------------------------------------------------------------------------
-
     // Generates a random 10 digit number as the message ID
     private String generateMessageID() {
         Random random = new Random();
@@ -159,10 +145,7 @@ public class Message {
         return messageHash;
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // RECIPIENT VALIDATION METHOD
-    // --------------------------------------------------------------------------------------------------------
-
     // Validates the recipient cell phone number
     // Must start with +27 followed by exactly 9 digits
     // Returns appropriate success or failure message
@@ -176,10 +159,7 @@ public class Message {
         }
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // MESSAGE LENGTH VALIDATION METHODS
-    // --------------------------------------------------------------------------------------------------------
-
     // Checks whether the message meets the 250 character limit
     public String checkMessageLength() {
         if (messageText.length() <= 250) {
