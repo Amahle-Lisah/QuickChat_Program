@@ -126,4 +126,4 @@ public class Registration {
         // This object is passed back to PROGPART1 for use during login
         return new Login(username, password, cellPhoneNumber, firstName, lastName);
     }
-} /// end of class
+} // end of class

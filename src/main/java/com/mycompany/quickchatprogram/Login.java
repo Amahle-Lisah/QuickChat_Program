@@ -4,7 +4,7 @@
  * Title: JavaScript - Username Validation using Regex
  * Author: GeeksforGeeks
  * Date: 28/03/2026 
- * Version: 1
+ * Version: 1  
  * Availability: https://www.geeksforgeeks.org/javascript/username-validation-in-js-regex/
  *
  * Title: Java Tutorial 

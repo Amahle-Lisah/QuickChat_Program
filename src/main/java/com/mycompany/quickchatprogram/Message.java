@@ -167,7 +167,7 @@ public class Message {
     // Checks whether the message meets the 250 character limit
     public String checkMessageLength() {
         if (messageText.length() <= 250) {
-            return "Message sent";
+            return "Message sent";      
         } else {
             return "Please enter a message of less than 250 characters.";
         }
@@ -384,10 +384,7 @@ public class Message {
         return longest;
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // c) SEARCH FOR A MESSAGE BY ID AND DISPLAY RECIPIENT AND MESSAGE
-    // --------------------------------------------------------------------------------------------------------
-
     // Searches the messageIDsArray for a matching ID
     // Returns the corresponding recipient and message text if found
     public String searchByMessageID(String searchID, Message[] allMessages) {
@@ -401,10 +398,7 @@ public class Message {
         return "Message ID not found.";
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // d) SEARCH FOR ALL MESSAGES SENT TO A PARTICULAR RECIPIENT
-    // --------------------------------------------------------------------------------------------------------
-
     // Searches through all messages for a matching recipient number
     // Returns all messages sent or stored for that recipient
     public String searchByRecipient(String searchRecipient, Message[] allMessages) {
@@ -424,10 +418,7 @@ public class Message {
         return result.toString().trim();
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // e) DELETE A MESSAGE USING THE MESSAGE HASH
-    // --------------------------------------------------------------------------------------------------------
-
     // Searches through all messages for a matching hash
     // Removes it by setting that position to null and returns a confirmation
     public String deleteByHash(String searchHash, Message[] allMessages) {
@@ -444,10 +435,7 @@ public class Message {
         return "Hash not found. No message deleted.";
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // f) DISPLAY FULL REPORT OF ALL STORED MESSAGES
-    // --------------------------------------------------------------------------------------------------------
-
     // Returns a full report showing Message Hash, Recipient and Message for all messages that were sent or stored during the session
     public String displayReport(Message[] allMessages) {
         StringBuilder result = new StringBuilder();
@@ -472,10 +460,7 @@ public class Message {
         return result.toString();
     }
 
-    // --------------------------------------------------------------------------------------------------------
     // ARRAY GETTER METHODS
-    // --------------------------------------------------------------------------------------------------------
-
     // Returns the sent messages array
     public static String[] getSentMessagesArray() {
         return sentMessagesArray;
@@ -511,10 +496,6 @@ public class Message {
         return storedCount;
     }
 
-    private static class JSONObject {
-
-        public JSONObject() {
-        }
-    }
+   
 } // end of class
    
